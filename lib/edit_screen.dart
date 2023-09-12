@@ -61,7 +61,7 @@ class _EditProfilePageState extends State<EditProfilePage> {
           content: TextField(
             onChanged: (value) {
               newSkill =
-                  value; // Update the newSkill variable when the user types.
+                  value;
             },
             decoration: InputDecoration(
                 labelText: MyStrings.skillName,
@@ -180,6 +180,7 @@ class _EditProfilePageState extends State<EditProfilePage> {
                   ),
                 ),
                 style: TextStyle(color: Colors.white),
+                maxLength: 15,
               ),
               SizedBox(
                 height: 15,
@@ -199,6 +200,7 @@ class _EditProfilePageState extends State<EditProfilePage> {
                   ),
                 ),
                 style: TextStyle(color: Colors.white),
+                maxLength: 50,
               ),
               SizedBox(
                 height: 15,
@@ -218,6 +220,7 @@ class _EditProfilePageState extends State<EditProfilePage> {
                   ),
                 ),
                 style: TextStyle(color: Colors.white),
+                maxLength: 25,
               ),
               SizedBox(
                 height: 15,
@@ -237,6 +240,7 @@ class _EditProfilePageState extends State<EditProfilePage> {
                   ),
                 ),
                 style: TextStyle(color: Colors.white),
+                maxLength: 25,
               ),
               SizedBox(
                 height: 15,

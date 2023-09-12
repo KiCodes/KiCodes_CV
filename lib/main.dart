@@ -168,138 +168,136 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            SingleChildScrollView(
-              child: Container(
-                width: mediaQuery.width * 0.35,
-                height: mediaQuery.height,
-                decoration: BoxDecoration(color: Colors.black),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    //slack
-                    Container(
-                      child: Column(
-                        children: [
-                          Container(
-                            child: Row(
-                              children: [
-                                Image.asset(
-                                  'assets/images/slack_icon.png',
-                                  height: 20,
-                                ),
-                                CustomText(
-                                  label: 'SLACK:',
-                                ),
-                              ],
-                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                            ),
-                            height: 30,
-                            alignment: Alignment.topCenter,
-                            decoration: BoxDecoration(
-                                color: Colors.grey.withOpacity(0.4)),
+            Container(
+              width: mediaQuery.width * 0.35,
+              height: mediaQuery.height,
+              decoration: BoxDecoration(color: Colors.black),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  //slack
+                  Container(
+                    child: Column(
+                      children: [
+                        Container(
+                          child: Row(
+                            children: [
+                              Image.asset(
+                                'assets/images/slack_icon.png',
+                                height: 20,
+                              ),
+                              CustomText(
+                                label: 'SLACK:',
+                              ),
+                            ],
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           ),
-                          Padding(
-                              padding: EdgeInsets.all(10),
-                              child: CustomText(
-                                label: _slackController.text,
-                                fontSize: 18,
-                              )),
-                        ],
-                      ),
-                    ),
-                    //github
-                    Container(
-                      child: Column(
-                        children: [
-                          Container(
-                            child: Row(
-                              children: [
-                                Image.asset(
-                                  'assets/images/github.png',
-                                  height: 20,
-                                ),
-                                CustomText(
-                                  label: MyStrings.gitHubHome,
-                                ),
-                              ],
-                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                            ),
-                            height: 30,
-                            alignment: Alignment.topCenter,
-                            decoration: BoxDecoration(
-                                color: Colors.grey.withOpacity(0.4)),
-                          ),
-                          Padding(
-                              padding: EdgeInsets.all(10),
-                              child: CustomText(
-                                label: _gitHubController.text,
-                                fontSize: 18,
-                              )),
-                        ],
-                      ),
-                    ),
-                    //role
-                    Container(
-                      child: CustomText(label: MyStrings.roleLabel),
-                      height: 30,
-                      alignment: Alignment.topCenter,
-                      decoration:
-                          BoxDecoration(color: Colors.grey.withOpacity(0.4)),
-                    ),
-                    Container(
-                      child: Padding(
-                        padding: const EdgeInsets.all(10.0),
-                        child: CustomText(
-                          label: _roleController.text,
-                          fontSize: 18,
+                          height: 30,
+                          alignment: Alignment.topCenter,
+                          decoration: BoxDecoration(
+                              color: Colors.grey.withOpacity(0.4)),
                         ),
+                        Padding(
+                            padding: EdgeInsets.all(10),
+                            child: CustomText(
+                              label: _slackController.text,
+                              fontSize: 18,
+                            )),
+                      ],
+                    ),
+                  ),
+                  //github
+                  Container(
+                    child: Column(
+                      children: [
+                        Container(
+                          child: Row(
+                            children: [
+                              Image.asset(
+                                'assets/images/github.png',
+                                height: 20,
+                              ),
+                              CustomText(
+                                label: MyStrings.gitHubHome,
+                              ),
+                            ],
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          ),
+                          height: 30,
+                          alignment: Alignment.topCenter,
+                          decoration: BoxDecoration(
+                              color: Colors.grey.withOpacity(0.4)),
+                        ),
+                        Padding(
+                            padding: EdgeInsets.all(10),
+                            child: CustomText(
+                              label: _gitHubController.text,
+                              fontSize: 18,
+                            )),
+                      ],
+                    ),
+                  ),
+                  //role
+                  Container(
+                    child: CustomText(label: MyStrings.roleLabel),
+                    height: 30,
+                    alignment: Alignment.topCenter,
+                    decoration:
+                        BoxDecoration(color: Colors.grey.withOpacity(0.4)),
+                  ),
+                  Container(
+                    child: Padding(
+                      padding: const EdgeInsets.all(10.0),
+                      child: CustomText(
+                        label: _roleController.text,
+                        fontSize: 18,
                       ),
                     ),
-                    //contact
-                    Container(
-                      child: CustomText(label: MyStrings.contactLabel),
-                      margin: EdgeInsets.only(bottom: 10),
-                      height: 30,
-                      alignment: Alignment.topCenter,
-                      decoration:
-                          BoxDecoration(color: Colors.grey.withOpacity(0.4)),
-                    ),
-                    //phone email
-                    Container(
-                        alignment: Alignment.topLeft,
-                        padding: EdgeInsets.fromLTRB(7, 2, 0, 0),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            CustomText(
-                              label: MyStrings.phoneLabel,
-                              fontSize: 17,
+                  ),
+                  //contact
+                  Container(
+                    child: CustomText(label: MyStrings.contactLabel),
+                    margin: EdgeInsets.only(bottom: 10),
+                    height: 30,
+                    alignment: Alignment.topCenter,
+                    decoration:
+                        BoxDecoration(color: Colors.grey.withOpacity(0.4)),
+                  ),
+                  //phone email
+                  Container(
+                      alignment: Alignment.topLeft,
+                      padding: EdgeInsets.fromLTRB(7, 2, 0, 0),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          CustomText(
+                            label: MyStrings.phoneLabel,
+                            fontSize: 17,
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(bottom: 10.0),
+                            child: CustomText(
+                              label: _phoneController.text,
+                              fontSize: 16,
                             ),
-                            Padding(
-                              padding: const EdgeInsets.only(bottom: 10.0),
-                              child: CustomText(
-                                label: _phoneController.text,
-                                fontSize: 16,
-                              ),
+                          ),
+                          CustomText(
+                            label: MyStrings.emailLabel,
+                            fontSize: 17,
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(bottom: 8.0),
+                            child: CustomText(
+                              label: _emailController.text,
+                              fontSize: 16,
                             ),
-                            CustomText(
-                              label: MyStrings.emailLabel,
-                              fontSize: 17,
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.only(bottom: 8.0),
-                              child: CustomText(
-                                label: _emailController.text,
-                                fontSize: 16,
-                              ),
-                            ),
-                          ],
-                        )),
-                    SizedBox(
-                      height: 20,
-                    ),
-                  ],
-                ),
+                          ),
+                        ],
+                      )),
+                  SizedBox(
+                    height: 20,
+                  ),
+                ],
               ),
             ),
             SingleChildScrollView(
@@ -326,7 +324,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           Padding(
                             padding: const EdgeInsets.all(10.0),
                             child: CustomText(
-                              label: bio,
+                              label: _bioController.text,
                               color: Colors.black,
                               fontSize: 15,
                             ),
