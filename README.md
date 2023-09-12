@@ -1,16 +1,39 @@
-# kicodes_cv
+# KiCodes CV App
 
-A CV flutter application
+Welcome to KiCodes_CV, a Flutter-based CV (Curriculum Vitae) editing application. KiCodes_CV is designed to help you create and manage your CV with ease. Whether you're a job seeker, student, or professional, MyCV simplifies the process of creating and maintaining your CV.
+
+## Features
+
+- **User-Friendly Interface:** KiCodes_CV provides an intuitive and user-friendly interface for easy CV creation and editing.
+
+- **Two Pages:** KiCodes_CV consists of two main screens: the Home Screen and the Edit Page.
+
+- **Customizable CV Sections:** You can customize various sections of your CV.
+
+- **Real-Time Editing:** See your CV updates in real-time as you make changes, ensuring that your CV looks exactly the way you want it.
+
+
+## Screenshots
+
+![Home Screen](assets/screenshots/home.png)
+![Edit Page](assets/screenshots/editCv.png)
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+Follow these steps to get started with MyCV:
 
-A few resources to get you started if this is your first Flutter project:
+1. **Clone the Repository:**
+   ```shell
+   git clone https://github.com/KiCodes/KiCodes_CV.git
+   cd KiCodes_CV
+2. **Install Dependencies:**
+   flutter pub get
+   
+3. **Run the app**
+   flutter run
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+4. **Start Editing**
+   Launch the app and navigate to the Edit Page.
+   Add your personal details, education, work experience, skills, and any other sections relevant to your CV.
+   Save your changes and view your CV on the Home Screen.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
