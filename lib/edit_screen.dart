@@ -8,20 +8,20 @@ class EditProfilePage extends StatefulWidget {
 
   final Function(UserProfile) onSaveCallback;
 
-  EditProfilePage({required this.userProfile, required this.onSaveCallback});
+  const EditProfilePage({super.key, required this.userProfile, required this.onSaveCallback});
 
   @override
   _EditProfilePageState createState() => _EditProfilePageState();
 }
 
 class _EditProfilePageState extends State<EditProfilePage> {
-  TextEditingController _fullNameController = TextEditingController();
-  TextEditingController _roleController = TextEditingController();
-  TextEditingController _phoneController = TextEditingController();
-  TextEditingController _emailController = TextEditingController();
-  TextEditingController _slackController = TextEditingController();
-  TextEditingController _gitHubController = TextEditingController();
-  TextEditingController _bioController = TextEditingController();
+  final TextEditingController _fullNameController = TextEditingController();
+  final TextEditingController _roleController = TextEditingController();
+  final TextEditingController _phoneController = TextEditingController();
+  final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _slackController = TextEditingController();
+  final TextEditingController _gitHubController = TextEditingController();
+  final TextEditingController _bioController = TextEditingController();
 
   List<String> _technicalSkillsList = [];
 
@@ -54,7 +54,7 @@ class _EditProfilePageState extends State<EditProfilePage> {
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
-          title: CustomText(
+          title: const CustomText(
             label: MyStrings.addNewSkill,
             color: Colors.white,
           ),
@@ -65,26 +65,26 @@ class _EditProfilePageState extends State<EditProfilePage> {
             },
             decoration: InputDecoration(
                 labelText: MyStrings.skillName,
-                focusedBorder: UnderlineInputBorder(borderSide: BorderSide(color: Colors.cyan, width: 2)),
+                focusedBorder: const UnderlineInputBorder(borderSide: BorderSide(color: Colors.cyan, width: 2)),
                 labelStyle: TextStyle(
                   color: Colors.white.withOpacity(0.7),
                 )),
-            style: TextStyle(color: Colors.white),
+            style: const TextStyle(color: Colors.white),
           ),
           actions: <Widget>[
             TextButton(
-              child: Text('Cancel', style: TextStyle(color: Colors.red),),
+              child: const Text('Cancel', style: TextStyle(color: Colors.red),),
               onPressed: () {
                 Navigator.of(context).pop(); // Close the dialog.
               },
             ),
             TextButton(
-              child: Text('Add', style: TextStyle(color: Colors.green)),
+              child: const Text('Add', style: TextStyle(color: Colors.green)),
               onPressed: () {
                 if (newSkill.isNotEmpty) {
                   addSkill(newSkill);
                   ScaffoldMessenger.of(context).showSnackBar(
-                    SnackBar(
+                    const SnackBar(
                       backgroundColor: Colors.green,
                       content: CustomText(label: MyStrings.successList, color:  Colors.white,fontWeight: FontWeight.w300, fontSize: 13,),
                       duration: Duration(seconds: 3),
@@ -107,24 +107,24 @@ class _EditProfilePageState extends State<EditProfilePage> {
     return ScaffoldMessenger(
       child: Scaffold(
         appBar: AppBar(
-          title: Text(
+          title: const Text(
             MyStrings.editCV,
             style: TextStyle(color: Colors.white),
           ),
           backgroundColor: Colors.black,
-          iconTheme: IconThemeData(color: Colors.white),
+          iconTheme: const IconThemeData(color: Colors.white),
         ),
         backgroundColor: Colors.black,
         body: SingleChildScrollView(
-          padding: EdgeInsets.all(16.0),
+          padding: const EdgeInsets.all(16.0),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
-              SizedBox(
+              const SizedBox(
                 height: 15,
               ),
               SaveButton(fullNameController: _fullNameController, roleController: _roleController, phoneController: _phoneController, emailController: _emailController, slackController: _slackController, gitHubController: _gitHubController, bioController: _bioController, technicalSkillsList: _technicalSkillsList, widget: widget),
-              SizedBox(
+              const SizedBox(
                 height: 15,
               ),
               //fullname
@@ -132,18 +132,18 @@ class _EditProfilePageState extends State<EditProfilePage> {
                 controller: _fullNameController,
                 decoration: InputDecoration(
                   labelText: MyStrings.fullNameLabel,
-                  labelStyle: TextStyle(color: Colors.white),
+                  labelStyle: const TextStyle(color: Colors.white),
                   enabledBorder: OutlineInputBorder(
                     borderSide: BorderSide(color: Colors.grey.withOpacity(0.4)),
                   ),
                   focusedBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.white),
+                    borderSide: const BorderSide(color: Colors.white),
                     borderRadius: BorderRadius.circular(23),
                   ),
                 ),
-                style: TextStyle(color: Colors.white),
+                style: const TextStyle(color: Colors.white),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 15,
               ),
               //role
@@ -151,18 +151,18 @@ class _EditProfilePageState extends State<EditProfilePage> {
                 controller: _roleController,
                 decoration: InputDecoration(
                   labelText: MyStrings.roleLabel,
-                  labelStyle: TextStyle(color: Colors.white),
+                  labelStyle: const TextStyle(color: Colors.white),
                   enabledBorder: OutlineInputBorder(
                     borderSide: BorderSide(color: Colors.grey.withOpacity(0.4)),
                   ),
                   focusedBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.white),
+                    borderSide: const BorderSide(color: Colors.white),
                     borderRadius: BorderRadius.circular(23),
                   ),
                 ),
-                style: TextStyle(color: Colors.white),
+                style: const TextStyle(color: Colors.white),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 15,
               ),
               //phone
@@ -170,19 +170,19 @@ class _EditProfilePageState extends State<EditProfilePage> {
                 controller: _phoneController,
                 decoration: InputDecoration(
                   labelText: MyStrings.phoneLabel,
-                  labelStyle: TextStyle(color: Colors.white),
+                  labelStyle: const TextStyle(color: Colors.white),
                   enabledBorder: OutlineInputBorder(
                     borderSide: BorderSide(color: Colors.grey.withOpacity(0.4)),
                   ),
                   focusedBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.white),
+                    borderSide: const BorderSide(color: Colors.white),
                     borderRadius: BorderRadius.circular(23),
                   ),
                 ),
-                style: TextStyle(color: Colors.white),
+                style: const TextStyle(color: Colors.white),
                 maxLength: 15,
               ),
-              SizedBox(
+              const SizedBox(
                 height: 15,
               ),
               //email
@@ -190,19 +190,19 @@ class _EditProfilePageState extends State<EditProfilePage> {
                 controller: _emailController,
                 decoration: InputDecoration(
                   labelText: MyStrings.emailLabel,
-                  labelStyle: TextStyle(color: Colors.white),
+                  labelStyle: const TextStyle(color: Colors.white),
                   enabledBorder: OutlineInputBorder(
                     borderSide: BorderSide(color: Colors.grey.withOpacity(0.4)),
                   ),
                   focusedBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.white),
+                    borderSide: const BorderSide(color: Colors.white),
                     borderRadius: BorderRadius.circular(23),
                   ),
                 ),
-                style: TextStyle(color: Colors.white),
+                style: const TextStyle(color: Colors.white),
                 maxLength: 50,
               ),
-              SizedBox(
+              const SizedBox(
                 height: 15,
               ),
               //SLACK
@@ -210,19 +210,19 @@ class _EditProfilePageState extends State<EditProfilePage> {
                 controller: _slackController,
                 decoration: InputDecoration(
                   labelText: MyStrings.slackLabel,
-                  labelStyle: TextStyle(color: Colors.white),
+                  labelStyle: const TextStyle(color: Colors.white),
                   enabledBorder: OutlineInputBorder(
                     borderSide: BorderSide(color: Colors.grey.withOpacity(0.4)),
                   ),
                   focusedBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.white),
+                    borderSide: const BorderSide(color: Colors.white),
                     borderRadius: BorderRadius.circular(23),
                   ),
                 ),
-                style: TextStyle(color: Colors.white),
+                style: const TextStyle(color: Colors.white),
                 maxLength: 25,
               ),
-              SizedBox(
+              const SizedBox(
                 height: 15,
               ),
               //'GITHUB HANDLE:'
@@ -230,19 +230,19 @@ class _EditProfilePageState extends State<EditProfilePage> {
                 controller: _gitHubController,
                 decoration: InputDecoration(
                   labelText: MyStrings.githubLabel,
-                  labelStyle: TextStyle(color: Colors.white),
+                  labelStyle: const TextStyle(color: Colors.white),
                   enabledBorder: OutlineInputBorder(
                     borderSide: BorderSide(color: Colors.grey.withOpacity(0.4)),
                   ),
                   focusedBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.white),
+                    borderSide: const BorderSide(color: Colors.white),
                     borderRadius: BorderRadius.circular(23),
                   ),
                 ),
-                style: TextStyle(color: Colors.white),
+                style: const TextStyle(color: Colors.white),
                 maxLength: 25,
               ),
-              SizedBox(
+              const SizedBox(
                 height: 15,
               ),
               //bio
@@ -250,27 +250,27 @@ class _EditProfilePageState extends State<EditProfilePage> {
                 controller: _bioController,
                 decoration: InputDecoration(
                   labelText: MyStrings.bioLabel,
-                  labelStyle: TextStyle(color: Colors.white),
+                  labelStyle: const TextStyle(color: Colors.white),
                   enabledBorder: OutlineInputBorder(
                     borderSide: BorderSide(color: Colors.grey.withOpacity(0.4)),
                   ),
                   focusedBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.white),
+                    borderSide: const BorderSide(color: Colors.white),
                     borderRadius: BorderRadius.circular(23),
                   ),
                 ),
-                style: TextStyle(color: Colors.white),
+                style: const TextStyle(color: Colors.white),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 15,
               ),
               //technical skills
-              CustomText(label: MyStrings.techSkillsLabel),
+              const CustomText(label: MyStrings.techSkillsLabel),
               TextButton(
                 onPressed: () {
                   _showSkillInputDialog();
                 },
-                child: Text(
+                child: const Text(
                   MyStrings.addNewSkill,
                   style: TextStyle(
                       color: Colors.green,
@@ -280,8 +280,8 @@ class _EditProfilePageState extends State<EditProfilePage> {
               ),
               ReorderableListView.builder(
                 shrinkWrap: true,
-                padding: EdgeInsets.only(left: 10, right: 10, bottom: 10),
-                physics: NeverScrollableScrollPhysics(),
+                padding: const EdgeInsets.only(left: 10, right: 10, bottom: 10),
+                physics: const NeverScrollableScrollPhysics(),
                 itemCount: _technicalSkillsList.length,
                 itemBuilder: (context, index) {
                   final skill = _technicalSkillsList[index];
@@ -289,7 +289,7 @@ class _EditProfilePageState extends State<EditProfilePage> {
                     elevation: 3,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(29.0),
-                      side: BorderSide(
+                      side: const BorderSide(
                         color: Colors.white,
                         style: BorderStyle.solid,
                         strokeAlign: 2
@@ -301,7 +301,7 @@ class _EditProfilePageState extends State<EditProfilePage> {
                       title: Row(
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
-                          Icon(
+                          const Icon(
                             Icons.drag_handle,
                             color: Colors.blue,
                           ),
@@ -317,7 +317,7 @@ class _EditProfilePageState extends State<EditProfilePage> {
                             ),
                           ),
                           IconButton(
-                            icon: Icon(
+                            icon: const Icon(
                               Icons.close,
                               color: Colors.red,
                             ),
@@ -325,7 +325,7 @@ class _EditProfilePageState extends State<EditProfilePage> {
                               setState(() {
                                 _technicalSkillsList.removeAt(index);
                                 ScaffoldMessenger.of(context).showSnackBar(
-                                  SnackBar(
+                                  const SnackBar(
                                     backgroundColor: Colors.red,
                                     content: CustomText(
                                       label: MyStrings.rmvLbl,
@@ -404,7 +404,7 @@ class SaveButton extends StatelessWidget {
 
         widget.onSaveCallback(updatedUserProfile);
         ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(
+          const SnackBar(
             backgroundColor: Colors.green,
             content: CustomText(label: MyStrings.success, color: Colors.white, fontWeight: FontWeight.w300, fontSize: 13,),
             duration: Duration(seconds: 3),
@@ -413,10 +413,10 @@ class SaveButton extends StatelessWidget {
 
         Navigator.pop(context);
       },
-      style: ButtonStyle(
+      style: const ButtonStyle(
         backgroundColor: MaterialStatePropertyAll(Colors.green)
       ),
-      child: Text(MyStrings.save, style: TextStyle(color: Colors.white),),
+      child: const Text(MyStrings.save, style: TextStyle(color: Colors.white),),
     );
   }
 }

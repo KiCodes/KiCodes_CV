@@ -28,7 +28,7 @@ class _SplashScreenState extends State<SplashScreen> {
       child: Stack(
         children: [
           Container(
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               gradient: LinearGradient(
                 begin: Alignment.topLeft,
                 end: Alignment.topCenter,
@@ -47,8 +47,8 @@ class _SplashScreenState extends State<SplashScreen> {
                 children: [
                   SizedBox(
                     height: MediaQuery.of(context).size.height * 0.35,
-                    child: Text(
-                      MyStrings.kicodes,
+                    child: const Text(
+                      MyStrings.kiCodes,
                       overflow: TextOverflow.visible,
                       textAlign: TextAlign.left,
                       style: TextStyle(

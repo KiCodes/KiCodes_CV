@@ -24,8 +24,8 @@ class MyApp extends StatelessWidget {
       ),
       initialRoute: '/splash',
       routes: {
-        '/splash': (context) => SplashScreen(),
-        '/home': (context) => MyHomePage(),
+        '/splash': (context) => const SplashScreen(),
+        '/home': (context) => const MyHomePage(),
       },
     );
   }
@@ -138,23 +138,23 @@ class _MyHomePageState extends State<MyHomePage> {
                   MaterialPageRoute(
                     builder: (context) => EditProfilePage(
                       userProfile: userProfile,
-                      onSaveCallback: (UpdatedUserProfile) {
+                      onSaveCallback: (updatedUserProfile) {
                         setState(() {
-                          _bioController.text = UpdatedUserProfile.bio;
-                          _fullNameController.text = UpdatedUserProfile.fullName;
-                          _gitHubController.text = UpdatedUserProfile.gitHubHandle;
-                          _slackController.text = UpdatedUserProfile.slackName;
-                          _emailController.text = UpdatedUserProfile.email;
-                          _phoneController.text = UpdatedUserProfile.phone;
-                          _roleController.text = UpdatedUserProfile.role;
-                          technicalSkillsList = UpdatedUserProfile.technicalSkillsList;
+                          _bioController.text = updatedUserProfile.bio;
+                          _fullNameController.text = updatedUserProfile.fullName;
+                          _gitHubController.text = updatedUserProfile.gitHubHandle;
+                          _slackController.text = updatedUserProfile.slackName;
+                          _emailController.text = updatedUserProfile.email;
+                          _phoneController.text = updatedUserProfile.phone;
+                          _roleController.text = updatedUserProfile.role;
+                          technicalSkillsList = updatedUserProfile.technicalSkillsList;
                         });
                       },
                     ),
                   ),
                 );
               },
-              icon: Icon(
+              icon: const Icon(
                 Icons.edit,
                 size: 30,
                 color: Colors.white,
@@ -162,7 +162,7 @@ class _MyHomePageState extends State<MyHomePage> {
         ],
       ),
       backgroundColor: Colors.white,
-      body: Container(
+      body: SizedBox(
         height: double.infinity,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.start,
@@ -171,106 +171,102 @@ class _MyHomePageState extends State<MyHomePage> {
             Container(
               width: mediaQuery.width * 0.35,
               height: mediaQuery.height,
-              decoration: BoxDecoration(color: Colors.black),
+              decoration: const BoxDecoration(color: Colors.black),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   //slack
-                  Container(
-                    child: Column(
-                      children: [
-                        Container(
-                          child: Row(
-                            children: [
-                              Image.asset(
-                                'assets/images/slack_icon.png',
-                                height: 20,
-                              ),
-                              CustomText(
-                                label: 'SLACK:',
-                              ),
-                            ],
-                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          ),
-                          height: 30,
-                          alignment: Alignment.topCenter,
-                          decoration: BoxDecoration(
-                              color: Colors.grey.withOpacity(0.4)),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Container(
+                        height: 30,
+                        alignment: Alignment.topCenter,
+                        decoration: BoxDecoration(
+                            color: Colors.grey.withOpacity(0.4)),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            Image.asset(
+                              'assets/images/slack_icon.png',
+                              height: 20,
+                            ),
+                            const CustomText(
+                              label: 'SLACK:',
+                            ),
+                          ],
                         ),
-                        Padding(
-                            padding: EdgeInsets.all(10),
-                            child: CustomText(
-                              label: _slackController.text,
-                              fontSize: 18,
-                            )),
-                      ],
-                    ),
+                      ),
+                      Padding(
+                          padding: const EdgeInsets.all(10),
+                          child: CustomText(
+                            label: _slackController.text,
+                            fontSize: 18,
+                          )),
+                    ],
                   ),
                   //github
-                  Container(
-                    child: Column(
-                      children: [
-                        Container(
-                          child: Row(
-                            children: [
-                              Image.asset(
-                                'assets/images/github.png',
-                                height: 20,
-                              ),
-                              CustomText(
-                                label: MyStrings.gitHubHome,
-                              ),
-                            ],
-                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          ),
-                          height: 30,
-                          alignment: Alignment.topCenter,
-                          decoration: BoxDecoration(
-                              color: Colors.grey.withOpacity(0.4)),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Container(
+                        height: 30,
+                        alignment: Alignment.topCenter,
+                        decoration: BoxDecoration(
+                            color: Colors.grey.withOpacity(0.4)),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            Image.asset(
+                              'assets/images/github.png',
+                              height: 20,
+                            ),
+                            const CustomText(
+                              label: MyStrings.gitHubHome,
+                            ),
+                          ],
                         ),
-                        Padding(
-                            padding: EdgeInsets.all(10),
-                            child: CustomText(
-                              label: _gitHubController.text,
-                              fontSize: 18,
-                            )),
-                      ],
-                    ),
+                      ),
+                      Padding(
+                          padding: const EdgeInsets.all(10),
+                          child: CustomText(
+                            label: _gitHubController.text,
+                            fontSize: 18,
+                          )),
+                    ],
                   ),
                   //role
                   Container(
-                    child: CustomText(label: MyStrings.roleLabel),
                     height: 30,
                     alignment: Alignment.topCenter,
                     decoration:
                         BoxDecoration(color: Colors.grey.withOpacity(0.4)),
+                    child: const CustomText(label: MyStrings.roleLabel),
                   ),
-                  Container(
-                    child: Padding(
-                      padding: const EdgeInsets.all(10.0),
-                      child: CustomText(
-                        label: _roleController.text,
-                        fontSize: 18,
-                      ),
+                  Padding(
+                    padding: const EdgeInsets.all(10.0),
+                    child: CustomText(
+                      label: _roleController.text,
+                      fontSize: 18,
                     ),
                   ),
                   //contact
                   Container(
-                    child: CustomText(label: MyStrings.contactLabel),
-                    margin: EdgeInsets.only(bottom: 10),
+                    margin: const EdgeInsets.only(bottom: 10),
                     height: 30,
                     alignment: Alignment.topCenter,
                     decoration:
                         BoxDecoration(color: Colors.grey.withOpacity(0.4)),
+                    child: const CustomText(label: MyStrings.contactLabel),
                   ),
                   //phone email
                   Container(
                       alignment: Alignment.topLeft,
-                      padding: EdgeInsets.fromLTRB(7, 2, 0, 0),
+                      padding: const EdgeInsets.fromLTRB(7, 2, 0, 0),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          CustomText(
+                          const CustomText(
                             label: MyStrings.phoneLabel,
                             fontSize: 17,
                           ),
@@ -281,7 +277,7 @@ class _MyHomePageState extends State<MyHomePage> {
                               fontSize: 16,
                             ),
                           ),
-                          CustomText(
+                          const CustomText(
                             label: MyStrings.emailLabel,
                             fontSize: 17,
                           ),
@@ -294,7 +290,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           ),
                         ],
                       )),
-                  SizedBox(
+                  const SizedBox(
                     height: 20,
                   ),
                 ],
@@ -304,46 +300,44 @@ class _MyHomePageState extends State<MyHomePage> {
               child: Container(
                 width: mediaQuery.width * 0.65,
                 alignment: Alignment.topRight,
-                decoration: BoxDecoration(color: Colors.white),
+                decoration: const BoxDecoration(color: Colors.white),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-                    Container(
-                      child: Column(
-                        children: [
-                          Container(
-                              padding: EdgeInsets.only(right: 10, left: 10),
-                              height: 30,
-                              width: mediaQuery.width,
-                              color: Colors.black.withOpacity(0.4),
-                              child: CustomText(
-                                label: MyStrings.bioLabel,
-                                fontSize: 18,
-                                color: Colors.black,
-                              )),
-                          Padding(
-                            padding: const EdgeInsets.all(10.0),
-                            child: CustomText(
-                              label: _bioController.text,
+                    Column(
+                      children: [
+                        Container(
+                            padding: const EdgeInsets.only(right: 10, left: 10),
+                            height: 30,
+                            width: mediaQuery.width,
+                            color: Colors.black.withOpacity(0.4),
+                            child: const CustomText(
+                              label: MyStrings.bioLabel,
+                              fontSize: 18,
                               color: Colors.black,
-                              fontSize: 15,
-                            ),
-                          )
-                        ],
-                      ),
+                            )),
+                        Padding(
+                          padding: const EdgeInsets.all(10.0),
+                          child: CustomText(
+                            label: _bioController.text,
+                            color: Colors.black,
+                            fontSize: 15,
+                          ),
+                        )
+                      ],
                     ),
                     Container(
-                        padding: EdgeInsets.only(right: 10, left: 10),
+                        padding: const EdgeInsets.only(right: 10, left: 10),
                         height: 30,
                         width: mediaQuery.width,
                         color: Colors.black.withOpacity(0.4),
-                        child: CustomText(
+                        child: const CustomText(
                           label: MyStrings.techSkillsLabel,
                           fontSize: 18,
                           color: Colors.black,
                         )),
                     ListView.builder(
-                      physics: NeverScrollableScrollPhysics(),
+                      physics: const NeverScrollableScrollPhysics(),
                       shrinkWrap: true,
                       itemCount: technicalSkillsList.length,
                       itemBuilder: (context, index) {
@@ -352,13 +346,13 @@ class _MyHomePageState extends State<MyHomePage> {
                             ListTile(
                               title: Text(
                                 technicalSkillsList[index],
-                                style: TextStyle(
+                                style: const TextStyle(
                                     color: Colors.black,
                                     fontSize: 15,
                                     fontWeight: FontWeight.w700),
                               ),
                               contentPadding:
-                                  EdgeInsets.only(left: 10, right: 10),
+                                  const EdgeInsets.only(left: 10, right: 10),
                             ),
                             Divider(
                               color: Colors.black.withOpacity(0.4),
